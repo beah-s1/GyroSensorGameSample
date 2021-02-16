@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreMotion
+import RealmSwift
 
 class ViewController: UIViewController {
     @IBOutlet weak var cubeImageView: UIImageView! // 中央に置く画像
@@ -44,9 +45,27 @@ class ViewController: UIViewController {
             self.cubeImageView.center.y -= CGFloat(deviceGravity.y) * CGFloat(self.offset)
         }
         
-        //TODO: ゲーム性を出すために、スコアリングします
+        Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { (t) in
+            //TODO: ゲーム性を出すために、スコアリングします
+            let score = 0
+            
+            // 書き込み用のデータを作る
+            let scoreData : Score = Score()
+            scoreData.score = score
+            scoreData.date = Date()
+            
+            // データベースへの書き込み
+            let database = try! Realm()
+            try! database.write{
+                database.add(scoreData)
+            }
+        }
     }
 
 
 }
 
+class Score: Object{
+    @objc dynamic var score: Int = 0
+    @objc dynamic var date: Date = Date()
+}

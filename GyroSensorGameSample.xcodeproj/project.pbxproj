@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,9 @@
 		9645DB2D25DAA9480099B8BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9645DB2B25DAA9480099B8BC /* LaunchScreen.storyboard */; };
 		9645DB3825DAA9490099B8BC /* GyroSensorGameSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9645DB3725DAA9490099B8BC /* GyroSensorGameSampleTests.swift */; };
 		9645DB4325DAA9490099B8BC /* GyroSensorGameSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9645DB4225DAA9490099B8BC /* GyroSensorGameSampleUITests.swift */; };
+		9645DB5825DC01F00099B8BC /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9645DB5725DC01F00099B8BC /* RealmSwift */; };
+		9645DB5A25DC01F00099B8BC /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 9645DB5925DC01F00099B8BC /* Realm */; };
+		9645DB5F25DC057B0099B8BC /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9645DB5E25DC057B0099B8BC /* ViewController2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,7 @@
 		9645DB3E25DAA9490099B8BC /* GyroSensorGameSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GyroSensorGameSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9645DB4225DAA9490099B8BC /* GyroSensorGameSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyroSensorGameSampleUITests.swift; sourceTree = "<group>"; };
 		9645DB4425DAA9490099B8BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9645DB5E25DC057B0099B8BC /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9645DB5A25DC01F00099B8BC /* Realm in Frameworks */,
+				9645DB5825DC01F00099B8BC /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +108,7 @@
 				9645DB2025DAA9470099B8BC /* AppDelegate.swift */,
 				9645DB2225DAA9470099B8BC /* SceneDelegate.swift */,
 				9645DB2425DAA9470099B8BC /* ViewController.swift */,
+				9645DB5E25DC057B0099B8BC /* ViewController2.swift */,
 				9645DB2625DAA9470099B8BC /* Main.storyboard */,
 				9645DB2925DAA9480099B8BC /* Assets.xcassets */,
 				9645DB2B25DAA9480099B8BC /* LaunchScreen.storyboard */,
@@ -144,6 +151,10 @@
 			dependencies = (
 			);
 			name = GyroSensorGameSample;
+			packageProductDependencies = (
+				9645DB5725DC01F00099B8BC /* RealmSwift */,
+				9645DB5925DC01F00099B8BC /* Realm */,
+			);
 			productName = GyroSensorGameSample;
 			productReference = 9645DB1D25DAA9470099B8BC /* GyroSensorGameSample.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +226,9 @@
 				Base,
 			);
 			mainGroup = 9645DB1425DAA9470099B8BC;
+			packageReferences = (
+				9645DB5625DC01F00099B8BC /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = 9645DB1E25DAA9470099B8BC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9645DB2525DAA9470099B8BC /* ViewController.swift in Sources */,
+				9645DB5F25DC057B0099B8BC /* ViewController2.swift in Sources */,
 				9645DB2125DAA9470099B8BC /* AppDelegate.swift in Sources */,
 				9645DB2325DAA9470099B8BC /* SceneDelegate.swift in Sources */,
 			);
@@ -593,6 +608,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9645DB5625DC01F00099B8BC /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9645DB5725DC01F00099B8BC /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9645DB5625DC01F00099B8BC /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+		9645DB5925DC01F00099B8BC /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9645DB5625DC01F00099B8BC /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9645DB1525DAA9470099B8BC /* Project object */;
 }
